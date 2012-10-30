@@ -26,8 +26,9 @@ public static $extensions = array(
 ```
 
 ### Override `canCreate` on the base Page class
-Silverstripe core currently prevents DataExtensions from overriding the behaviour of the SiteTree->canCreate() function for users with ADMIN permissions, so an 
-addition to adding the extension to the page type a modification to the Page class is also required to properly invoke this DataExtension.
+Silverstripe core currently prevents DataExtensions from overriding the behaviour of the SiteTree->canCreate() function for users with ADMIN permissions (see 
+[ticket](http://open.silverstripe.org/ticket/7986)), so an addition to adding the extension to the page type a modification to the Page class is also required 
+to properly invoke this DataExtension.
 
 ```php
 /**
@@ -49,3 +50,8 @@ public function canCreate($member = null) {
 
 Note that if your project only has one page type that needs to be a singleton it you can do all this just by overriding the `canCreate` method in that class and
 there's no need for a DataExtension at all.
+
+Requirements
+------------
+
+Silverstripe 3.0+

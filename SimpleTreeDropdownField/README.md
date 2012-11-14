@@ -28,7 +28,7 @@ A filter callback can be set as follows.
 $field->setFilterFunction(array($this,'filter'));
 ```
 
-The callback function will be passed the DataObject and should return true if the item should be included and false if it should be excluded. For example:
+The callback function will be passed the DataObject and should return `true` if the item should be included and `false` if it should be excluded. For example:
 
 ```php
 public function filter ($obj) {

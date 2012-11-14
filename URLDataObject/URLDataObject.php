@@ -60,7 +60,7 @@ class URLDataObject extends DataExtension {
 			throw new Exception(_t('URLDataObject.BaseLinkException','The DataObject being decorated must provide a getBaseLink function.'));
 		}
 		
-		$baseLink = $this->owner->getBaseLink();
+		$baseLink = Controller::join_links(Director::protocolAndHost(),$this->owner->getBaseLink());
 		
 		$url = (strlen($baseLink) > 36) ? "..." .substr($baseLink, -32) : $baseLink;
 		$urlsegment = new SiteTreeURLSegmentField('URLSegment', _t('URLDataObject.URLFieldLabel', 'URL Segment'));

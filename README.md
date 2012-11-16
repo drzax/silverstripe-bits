@@ -6,4 +6,5 @@ A collection of [Silverstripe](http://www.silverstripe.org) code. This is all st
 * [SimpleTreeDropdownField](https://github.com/drzax/silverstripe-bits/tree/master/SimpleTreeDropdownField)
 * [SingletonPage](https://github.com/drzax/silverstripe-bits/tree/master/SingletonPage)
 * [URLDataObject](https://github.com/drzax/silverstripe-bits/tree/master/URLDataObject)
+* [VersionedModelAdmin](https://github.com/drzax/silverstripe-bits/tree/master/VersionedModelAdmin)
 

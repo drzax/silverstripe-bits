@@ -1,7 +1,7 @@
 SingletonPage
 =============
 
-A [DataExtension](http://docs.silverstripe.org/framework/en/reference/dataextension) which enforceds that there is only one instance of a given page type.
+A [DataExtension](http://docs.silverstripe.org/framework/en/reference/dataextension) which enforces that there is only one instance of a given page type.
 
 Note that the use of 'singleton' here does not refer to use of the [singleton pattern](http://en.wikipedia.org/wiki/Singleton_pattern) as commonly understood in 
 programming.

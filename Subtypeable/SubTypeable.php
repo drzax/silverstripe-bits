@@ -3,7 +3,7 @@
 /**
  * Provides a single relationship between sub-typed dataobjects. 
  */
-class SubTypeable extends DataExtension {
+class SubTypeable extends DataObjectDecorator {
 	
 	/**
 	 * Get an array of subclass types suitable for a dropdown list.

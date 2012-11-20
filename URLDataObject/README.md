@@ -1,8 +1,8 @@
 URLDataObject
 =============
 
-A [DataExtension](http://docs.silverstripe.org/framework/en/reference/dataextension) which gives any 
-[DataObject](http://docs.silverstripe.org/framework/en/reference/dataobject) a unique URLDataObject field similar to all descendents of SiteTree.
+A [DataObjectDecorator](http://docs.silverstripe.org/framework/en/2.4/reference/dataobjectdecorator) which gives any 
+[DataObject](http://docs.silverstripe.org/framework/en/2.4/reference/dataobject) a unique URLDataObject field similar to all descendents of SiteTree.
 
 Usage
 -----
@@ -26,4 +26,4 @@ public static $extensions = array(
 Requirements
 ------------
 
-Silverstripe 3.0+
+Silverstripe 2.4.x

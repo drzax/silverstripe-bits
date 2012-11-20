@@ -3,8 +3,8 @@ SubTypeable
 
 **Note:** This is somewhat incomplete documentation, although the class does work.
 
-A [DataExtension](http://docs.silverstripe.org/framework/en/reference/dataextension) which provides a `get_class_dropdown` method to 
-[DataObject](http://docs.silverstripe.org/framework/en/reference/dataobject)s which can be used to display a list of possible object 
+A [DataObjectDecorator](http://docs.silverstripe.org/framework/en/2.4/reference/dataobjectdecorator) which provides a `get_class_dropdown` method to 
+[DataObject](http://docs.silverstripe.org/framework/en/2.4/reference/dataobject)s which can be used to display a list of possible object 
 subtypes in the CMS.
 
 Usage
@@ -26,15 +26,7 @@ public static $extensions = array(
 );
 ```
 
-Or via `_config/extension.yml`:
-
-```yml
-SubtypedDataObject:
-  extensions:
-    ['SubTypeable']
-```
-
 Requirements
 ------------
 
-Silverstripe 3.0+
+Silverstripe 2.4.x

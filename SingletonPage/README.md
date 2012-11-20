@@ -1,7 +1,7 @@
 SingletonPage
 =============
 
-A [DataExtension](http://docs.silverstripe.org/framework/en/reference/dataextension) which enforceds that there is only one instance of a given page type.
+A [DataObjectDecorator](http://docs.silverstripe.org/framework/en/2.4/reference/dataobjectdecorator) which enforces that there is only one instance of a given page type.
 
 Note that the use of 'singleton' here does not refer to use of the [singleton pattern](http://en.wikipedia.org/wiki/Singleton_pattern) as commonly understood in 
 programming.
@@ -26,9 +26,9 @@ public static $extensions = array(
 ```
 
 ### Override `canCreate` on the base Page class
-Silverstripe core currently prevents DataExtensions from overriding the behaviour of the SiteTree->canCreate() function for users with ADMIN permissions (see 
+Silverstripe core currently prevents DataObjectDecorator from overriding the behaviour of the SiteTree->canCreate() function for users with ADMIN permissions (see 
 [ticket](http://open.silverstripe.org/ticket/7986)), so an addition to adding the extension to the page type a modification to the Page class is also required 
-to properly invoke this DataExtension.
+to properly invoke this DataObjectDecorator.
 
 ```php
 /**
@@ -49,9 +49,9 @@ public function canCreate($member = null) {
 ```
 
 Note that if your project only has one page type that needs to be a singleton it you can do all this just by overriding the `canCreate` method in that class and
-there's no need for a DataExtension at all.
+there's no need for a DataObjectDecorator at all.
 
 Requirements
 ------------
 
-Silverstripe 3.0+
+Silverstripe 2.4.x

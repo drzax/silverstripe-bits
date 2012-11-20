@@ -5,7 +5,7 @@
  * 
  * @author Simon Elvery
  */
-class VersionedDataObjects extends DataExtension {
+class VersionedDataObjects extends DataObjectDecorator {
 	
 	/**
 	 * Correctly publish or delete versioned objects related to SiteTree.
@@ -42,6 +42,7 @@ class VersionedDataObjects extends DataExtension {
 		// Revert the mode and clear component cache.
 		Versioned::set_reading_mode($mode);
 		$this->owner->componentCache = array();
+		$this->owner->flushCache();
 
 		// Publish the drafts. 
 		foreach ($versioned as $relationship) {

@@ -2,7 +2,7 @@
 /**
  * A decorator to give DataObjects a unique ULRSegment field.
  */
-class URLDataObject extends DataExtension {
+class URLDataObject extends DataObjectDecorator {
 	
 	static $db = array(
 		'URLSegment' => 'Varchar(255)'
@@ -54,32 +54,6 @@ class URLDataObject extends DataExtension {
 	 * @return FieldList The updated fields.
 	 */
 	public function updateCMSFields(FieldList $fields) {
-		
-		// The DataObject being decorated must provide a getBaseLink function.
-		if (!$this->owner->hasMethod('getBaseLink')) {
-			throw new Exception(_t('URLDataObject.BaseLinkException','The DataObject being decorated must provide a getBaseLink function.'));
-		}
-		
-		$baseLink = Controller::join_links(Director::protocolAndHost(),$this->owner->getBaseLink());
-		
-		$url = (strlen($baseLink) > 36) ? "..." .substr($baseLink, -32) : $baseLink;
-		$urlsegment = new SiteTreeURLSegmentField('URLSegment', _t('URLDataObject.URLFieldLabel', 'URL Segment'));
-		$urlsegment->setURLPrefix($url);
-		if(!URLSegmentFilter::$default_allow_multibyte) {
-			$urlsegment->setHelpText(_t('URLDataObject.HelpChars', 'Special characters are automatically converted or removed.'));
-		}
-		
-		$titleField = $this->getTitleField();
-		if ($titleField == 'ID') { // At the top if there's no title field.
-			$fields->shift($urlsegment);
-		} else {
-			$fields->insertAfter($urlsegment, $titleField);
-		}
-		
-		// Fix a but in CMS todo: remove when pull request is applied to core and released
-		Requirements::add_i18n_javascript(CMS_DIR . '/javascript/lang', false, true);
-		Requirements::css(CMS_DIR . "/css/screen.css");
-		
-        return $fields;
+		$fields->removeByName('URLSegment');
 	}
 }

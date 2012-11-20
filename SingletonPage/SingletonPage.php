@@ -5,7 +5,7 @@
  * page type can be created. Also provides some utility funcitons for working
  * with signleton page types.
  */
-class SingletonPage extends DataExtension {
+class SingletonPage extends DataObjectDecorator {
 	
 	/**
 	 * Extend the can create method to return false if there is already a page

@@ -12,7 +12,8 @@ Copy the `VersionedModelAdmin.php` file to your project and make sure it's appli
 Either in `_config.php`:
 
 ```php
-Object::add_extension('MyDataObject', 'URLDataObject');
+Object::add_extension('ModelAdmin', 'VersionedModelAdmin');
+Object::add_extension('GridFieldDetailForm_ItemRequest', 'VersionedModelAdmin_GridFieldDetailForm_ItemRequest');
 ```
 
 Or in `_config\extensions.yml`:
